@@ -77,25 +77,17 @@ ul {
   text-align: center;
   .inner {
     display: inline-block;
-    padding: 0px;
+    padding: 20px 0px 10px 0;
     position: relative;
     text-align: center;
     text-decoration: none;
-    .content {
-      background-size: 120px;
-      display: flex;
-      padding: 10px 0px;
-      text-align: left;
-      .logo {
-        border: none;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-        width: 120px;
-      }
-      .text-stack {
-
-      }
+    .logo {
+      border: none;
+      box-shadow: none;
+      height: 62px;
+      margin: 0;
+      padding: 0;
+      width: 380px;
     }
   }
 }
