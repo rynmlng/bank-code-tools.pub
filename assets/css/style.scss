@@ -135,7 +135,7 @@ ul {
   }
 }
 
-#main_title {
+.hero_title {
   color: $black;
   display: inline-block;
   margin-top: 40px;
@@ -154,17 +154,75 @@ ul {
         color: $red;
       }
     }
-    #description_only {
+    .description_only {
+      font-size: 18px;
       margin: 0;
-      padding: 40px 0 160px;
+      padding: 40px 0 80px;
       white-space: pre-wrap;
     }
-    #hero #subheadline {
+    .hero .hero_subheadline {
       white-space: pre-wrap;
+    }
+    .trust {
+       background: $super-light-grey;
+       border-radius: 12px;
+       margin: 40px auto;
+       max-width: 1200px;
+       padding: 60px 20px;
+       text-align: center;
+       .trust_container {
+         margin: 0 auto;
+         max-width: 1000px;
+       }
+       .trust_title {
+         font-size: 36px;
+         margin-bottom: 16px;
+       }
+       .trust_summary {
+         font-size: 18px;
+         line-height: 1.6;
+         margin: 0 auto 40px;
+         max-width: 800px;
+       }
+       .trust_grid {
+         display: grid;
+         gap: 30px;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         margin-bottom: 40px;
+         .trust_item {
+           background: $white;
+           border-radius: 8px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+           padding: 24px;
+           .trust_header {
+             font-size: 21px;
+             margin: 12px 0 8px;
+           }
+           .trust_icon {
+             font-size: 48px;
+           }
+           .trust_summary {
+             font-size: 15px;
+             line-height: 1.5;
+           }
+         }
+       }
+       .badges {
+         display: flex;
+         gap: 20px;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin-top: 20px;
+         .badges-image {
+           border: none;
+           box-shadow: none;
+           height: 140px;
+         }
+       }
     }
     #main_description {
       margin: 20px 0 0 0;
-      &.rich-text {
+      &.rich_text {
         text-align: left;
         white-space: pre-wrap;
       }
@@ -184,7 +242,7 @@ ul {
           font-size: 14px;
           height: 14px;
           margin-bottom: 21px;
-          .parsley-errors-list {
+          .parsley_errors_list {
             list-style: none;
             margin-bottom: 0;
             padding: 0;
@@ -308,7 +366,7 @@ ul {
     #project_tagline { font-size: 21px; }
   }
 
-  #main_title { margin-top: 20px; }
+  .hero_title { margin-top: 20px; }
 
   #main_content { padding-top: 0px; }
 }
