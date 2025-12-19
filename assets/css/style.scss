@@ -143,6 +143,9 @@ ul {
 
 #main_wrap {
   background-color: $white;
+  #main_title {
+    margin-top: 30px;
+  }
   #main_content {
     color: $dark-grey;
     min-height: 250px;
