@@ -18,7 +18,7 @@ $white: #ffffff;
 
 /* overrides */
 body {
-  background-color: $black;
+  background-color: $white;
   text-align: center;
 }
 
@@ -77,25 +77,17 @@ ul {
   text-align: center;
   .inner {
     display: inline-block;
-    padding: 0px;
+    padding: 20px 0px 10px 0;
     position: relative;
     text-align: center;
     text-decoration: none;
-    .content {
-      background-size: 120px;
-      display: flex;
-      padding: 10px 0px;
-      text-align: left;
-      .logo {
-        border: none;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-        width: 120px;
-      }
-      .text-stack {
-
-      }
+    .logo {
+      border: none;
+      box-shadow: none;
+      height: 62px;
+      margin: 0;
+      padding: 0;
+      width: 380px;
     }
   }
 }
@@ -122,12 +114,21 @@ ul {
     column-gap: 16px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: nowrap; /* Forces single line, no wrapping */
+    justify-content: space-around; /* Even distribution; use space-between or center as needed */
     list-style: none;
-    margin-bottom: 0px;
-    padding-left: 0px;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: auto; /* Horizontal scroll if total width exceeds viewport */
     li {
-      margin-bottom: 0px;
+      flex: 1; /* Equal widths that shrink/grow */
+      min-width: 0; /* Allows shrinking below content size */
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+      text-align: center;
+      white-space: nowrap; /* Prevents text wrapping inside li */
     }
     .action {
       display: inline-block;
@@ -143,7 +144,7 @@ ul {
   }
 }
 
-#main_title {
+.hero_title {
   color: $black;
   display: inline-block;
   margin-top: 40px;
@@ -151,10 +152,13 @@ ul {
 
 #main_wrap {
   background-color: $white;
+  #main_title {
+    margin-top: 30px;
+  }
   #main_content {
     color: $dark-grey;
     min-height: 250px;
-    padding: 0px 10px 40px;
+    padding: 0px 10px 80px;
     text-align: center;
     a {
       transition: color 0.5s ease;
@@ -162,17 +166,80 @@ ul {
         color: $red;
       }
     }
-    #description_only {
+    .description_only {
+      font-size: 18px;
       margin: 0;
-      padding: 40px 0 160px;
+      padding: 40px 0 80px;
       white-space: pre-wrap;
     }
-    #hero #subheadline {
+    .hero .hero_subheadline {
       white-space: pre-wrap;
+    }
+    .trust {
+       background: $super-light-grey;
+       border-radius: 12px;
+       margin: 40px auto 0;
+       max-width: 1200px;
+       padding: 60px 20px;
+       text-align: center;
+       .trust_container {
+         margin: 0 auto;
+         max-width: 1000px;
+       }
+       .trust_title {
+         font-size: 36px;
+         margin-bottom: 16px;
+       }
+       .trust_summary {
+         font-size: 18px;
+         line-height: 1.6;
+         margin: 0 auto 40px;
+         max-width: 800px;
+       }
+       .trust_grid {
+         display: grid;
+         gap: 30px;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         margin-bottom: 60px;
+         .trust_item {
+           background: $white;
+           border-radius: 8px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+           padding: 24px;
+           .trust_header {
+             font-size: 21px;
+             margin: 12px 0 8px;
+           }
+           .trust_icon {
+             font-size: 48px;
+             img {
+               border: none;
+               box-shadow: none;
+               width: 100px;
+             }
+           }
+           .trust_summary {
+             font-size: 15px;
+             line-height: 1.5;
+           }
+         }
+       }
+       .badges {
+         display: flex;
+         gap: 40px;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin-top: 20px;
+         .badges-image {
+           border: none;
+           box-shadow: none;
+           height: 140px;
+         }
+       }
     }
     #main_description {
       margin: 20px 0 0 0;
-      &.rich-text {
+      &.rich_text {
         text-align: left;
         white-space: pre-wrap;
       }
@@ -192,7 +259,7 @@ ul {
           font-size: 14px;
           height: 14px;
           margin-bottom: 21px;
-          .parsley-errors-list {
+          .parsley_errors_list {
             list-style: none;
             margin-bottom: 0;
             padding: 0;
@@ -273,7 +340,7 @@ ul {
       column-gap: 16px;
       display: flex;
       flex-direction: row;
-      font-size: 14px;
+      font-size: 16px;
       justify-content: center;
       list-style: none;
       padding: 0;
@@ -282,6 +349,7 @@ ul {
         .link {
           display: block;
           font-weight: normal;
+          margin-bottom: 5px;
           .badge {
             border: none;
             box-shadow: none;
@@ -300,6 +368,32 @@ ul {
 }
 
 /* mobile */
+@media screen and (max-width: 768px) {
+  #navbar_wrap {
+    .inner {
+      padding-bottom: 0;
+      padding-top: 0;
+      ul {
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 18px;
+        overflow-x: visible;
+        li {
+          border-bottom: 2px solid $light-grey;
+          flex: none;
+          white-space: normal; /* Allow text wrapping on mobile */
+          padding: 12px 0; /* Vertical padding for tap targets */
+          width: 100%;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* small mobile */
 @media screen and (max-width: 480px) {
   h1 { font-size: 28px; }
   h2 { font-size: 21px; }
@@ -316,7 +410,7 @@ ul {
     #project_tagline { font-size: 21px; }
   }
 
-  #main_title { margin-top: 20px; }
+  .hero_title { margin-top: 20px; }
 
   #main_content { padding-top: 0px; }
 }
