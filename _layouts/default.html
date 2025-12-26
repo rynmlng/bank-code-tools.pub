@@ -86,12 +86,11 @@
           let post_data = {
             country_code: country_code,
             payment_field: api_payment_field,
-            params: {}
           };
 
           for (const element of $(this).serializeArray()) {
             if (!non_param_fields.includes(element.name)) {
-              post_data.params[element.name] = element.value;
+              post_data[element.name] = element.value;
             }
           }
 
