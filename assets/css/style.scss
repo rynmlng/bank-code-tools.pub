@@ -110,6 +110,9 @@ ul {
   background: $white;
   border-bottom: 2px solid $light-grey;
   border-top: 4px solid $red;
+  .inner {
+    max-width: 820px;
+  }
   ul {
     column-gap: 16px;
     display: flex;

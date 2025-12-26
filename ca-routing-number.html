@@ -44,14 +44,14 @@ faq_questions:
   - question: 'What is special about a routing number in Canada?'
     answer: 'Every country''s routing number format is different. Canada specifically pads the financial institution number and transit number with a leading 0 to make the routing number compatible with the United States'' American Bankers Association (ABA) routing number system in order to streamline cross-border transactions.'
   - question: 'When would I need to generate a routing number?'
-    answer: 'You need to generate a routing number for Canada if...<ul><li>You''re sending or receiving a cross-border electronic transfer to a Canadian bank account.</li><li>Your bank or payment provider requests a routing number for processing a transaction.</li><li>You want to verify the accuracy of a recipient''s bank account before transferring funds.</li></ul>User our <a href="/ca-routing-number/">Canada Routing Number generator tool</a> to instantly create a verified routing number.'
+    answer: 'You need to generate a routing number for Canada if...<ul><li>You''re sending or receiving a cross-border electronic transfer to a Canadian bank account.</li><li>Your bank or payment provider requests a routing number for processing a transaction.</li><li>You want to verify the accuracy of a recipient''s bank account before transferring funds.</li></ul>Use our <a href="/ca-routing-number/">Canada Routing Number generator tool</a> to instantly create a verified routing number.'
   - question: 'Where can I learn more about routing numbers in Canada?'
     answer: 'See the official Payments Canada''s Business guide on Wire payments <a href="https://www.payments.ca/payment-resources/support-guides/business-guides/wire-payments">here.</a>'
   - question: 'How can I integrate with your API directly?'
     answer: |
       Integrating directly with our API is straightforward and entirely open at this time. Here is a snippet of a sample web request you can make:
       <pre>
-      POST https://bankcode.tools/ca-routing-number/
+      POST https://api.bankcode.tools/ca-routing-number/
       {
         "financial_institution_number": "###",
         "transit_number": "#####"

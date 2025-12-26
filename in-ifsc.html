@@ -1,0 +1,63 @@
+---
+layout: payment_field
+title: IFSC Generator For India
+description: Instantly generate a valid IFSC for Indian bank transfers by entering your bank code and branch code. Our tool ensures your IFSC is accurate for secure Indian bank transactions.
+
+api_payment_field: ifsc
+country_code: IN
+payment_field: IFSC
+form_title: Generate an IFSC For India
+permalink: /in-ifsc/
+
+fields:
+  - name: bank_code
+    type: text
+    label: Enter a bank code
+    max_length: 4
+    parsley_length: '[1,4]'
+    parsley_type: digits
+    pattern: '\d{1,4}'
+    placeholder: '####'
+    validation_error_message: 'Must be 1-4 digits.'
+  - name: branch_code
+    type: text
+    label: Enter a branch code
+    max_length: 6
+    parsley_length: '[1,6]'
+    parsley_type: digits
+    pattern: '\d{1,6}'
+    placeholder: '######'
+    validation_error_message: 'Must be 1-6 digits.'
+
+how_to:
+  enter_bank_details: "Enter your bank code and branch code in the respective fields of the form."
+  form_image:
+    link: '/assets/images/forms/in-ifsc.png'
+    height: 894
+    width: 900
+
+faq_questions:
+  - question: 'What is an IFSC?'
+    answer: 'An IFSC (Indian Financial System Code) is a standardized numbering system to uniquely identify a specific bank account for the purpose of processing international payments accurately and efficiently. It contains a bank code as well as a branch code to ensure smooth and error-free cross-border transactions.'
+  - question: 'What is the format of an IFSC in India?'
+    answer: 'An IFSC in India is 11 digits and its format is...<ul><li><strong>Positions 1-4:</strong> Bank Code</li><li><strong>Position 5:</strong> Always 0</li><li><strong>Positions 6-11:</strong> Branch Code</li></ul>'
+  - question: 'What is special about an IFSC in India?'
+    answer: 'An IFSC is an instruction for domestically routing electronic transfers in India. While an IFSC is not required for cross-border money movement, it can help streamline cross-border transactions by providing final routing instructions after the money reaches India.'
+
+  - question: 'When would I need to generate an IFSC?'
+    answer: 'You need to generate an IFSC for India if...<ul><li>You''re sending or receiving a cross-border electronic transfer to an Indian bank account.</li><li>Your bank or payment provider requests an IFSC for processing a transaction.</li><li>You want to verify the accuracy of a recipient''s bank account before transferring funds.</li></ul>Use our <a href="/in-ifsc/">Indian IFSC generator tool</a> to instantly create a verified IFSC.'
+  - question: 'Where can I learn more about IFSCs in India?'
+    answer: 'See the Reserve Bank of India''s FAQ on the National Electronic Funds Transfer (NEFT) System <a href="https://www.rbi.org.in/commonman/english/scripts/FAQs.aspx?Id=274">here.</a>'
+  - question: 'How can I integrate with your API directly?'
+    answer: |
+      Integrating directly with our API is straightforward and entirely open at this time. Here is a snippet of a sample web request you can make:
+      <pre>
+      POST https://api.bankcode.tools/in-ifsc/
+      {
+        "bank_code": "####",
+        "branch_code": "######"
+        "country_code": "IN",
+        "payment_field": "ifsc"
+      }
+      </pre>
+---
