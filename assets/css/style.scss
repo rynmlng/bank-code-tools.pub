@@ -336,6 +336,7 @@ ul {
   border-top: 4px solid $red;
   text-align: left;
   .inner {
+    font-size: 14px;
     margin: 0 auto;
     max-width: 640px;
     position: relative;
@@ -343,7 +344,6 @@ ul {
       column-gap: 16px;
       display: flex;
       flex-direction: row;
-      font-size: 16px;
       justify-content: center;
       list-style: none;
       padding: 0;
@@ -352,7 +352,6 @@ ul {
         .link {
           display: block;
           font-weight: normal;
-          margin-bottom: 5px;
           .badge {
             border: none;
             box-shadow: none;
@@ -367,6 +366,9 @@ ul {
         }
       }
     }
+  }
+  .copyright {
+    text-align: center;
   }
 }
 
